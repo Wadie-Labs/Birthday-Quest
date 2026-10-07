@@ -1,0 +1,151 @@
+/* Pixie art style overlay for Josephine's Birthday Quest */
+:root{
+  --pixie-night:#12091f;
+  --pixie-violet:#29134b;
+  --pixie-card:#2f1852;
+  --pixie-card-2:#42246c;
+  --pixie-pink:#ff8bd1;
+  --pixie-purple:#b98cff;
+  --pixie-blue:#8feaff;
+  --pixie-mint:#9df2c0;
+  --pixie-gold:#ffe08a;
+  --pixie-cream:#fff7df;
+  --pixie-soft:#ecdfff;
+}
+
+html,body{
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255,139,209,.28), transparent 22%),
+    radial-gradient(circle at 82% 18%, rgba(143,234,255,.22), transparent 21%),
+    radial-gradient(circle at 65% 88%, rgba(157,242,192,.18), transparent 26%),
+    linear-gradient(180deg,var(--pixie-night),var(--pixie-violet) 52%,#090614) !important;
+  font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif !important;
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  opacity:.42;
+  background-image:
+    radial-gradient(circle,#fff 1px,transparent 1.6px),
+    radial-gradient(circle,var(--pixie-gold) 1px,transparent 1.8px),
+    radial-gradient(circle,var(--pixie-pink) 1px,transparent 1.7px),
+    radial-gradient(circle,var(--pixie-blue) 1px,transparent 1.8px);
+  background-size:76px 76px,112px 112px,146px 146px,188px 188px;
+  background-position:0 0,32px 18px,90px 64px,18px 122px;
+  animation:pixieStars 7s ease-in-out infinite alternate;
+}
+@keyframes pixieStars{from{transform:translateY(0)}to{transform:translateY(-9px)}}
+
+.card,
+.boss-chapter,
+.video-box,
+.post-credit,
+.memory,
+.stat,
+.tap-zone,
+.summon-stage{
+  background:
+    radial-gradient(circle at 20% 0%, rgba(255,139,209,.16), transparent 35%),
+    radial-gradient(circle at 86% 24%, rgba(143,234,255,.14), transparent 34%),
+    linear-gradient(180deg,rgba(66,36,108,.93),rgba(38,18,70,.92)) !important;
+  border:2px solid rgba(255,247,223,.38) !important;
+  box-shadow:
+    0 0 0 3px rgba(185,140,255,.20),
+    0 0 24px rgba(255,139,209,.18),
+    0 18px 42px rgba(0,0,0,.34) !important;
+}
+
+.card{position:relative;overflow:hidden;border-radius:30px !important;}
+.card:before{
+  content:"✦";
+  position:absolute;
+  right:18px;
+  top:14px;
+  color:var(--pixie-gold);
+  font-size:25px;
+  text-shadow:0 0 13px rgba(255,224,138,.85);
+  animation:pixieSpin 3.2s linear infinite;
+  pointer-events:none;
+}
+@keyframes pixieSpin{to{transform:rotate(360deg)}}
+
+h1,h2,h3,.badge,.btn,button{
+  letter-spacing:.02em !important;
+}
+h1,h2,h3{
+  color:var(--pixie-cream) !important;
+  text-shadow:0 2px 0 rgba(41,19,75,.9),0 0 14px rgba(255,139,209,.24) !important;
+}
+p,.tiny,.meter-label,.stat,.memory p{color:var(--pixie-soft) !important;}
+
+.badge{
+  background:linear-gradient(90deg,var(--pixie-pink),var(--pixie-gold)) !important;
+  color:#2b1138 !important;
+  border:1px solid rgba(255,255,255,.55);
+  box-shadow:0 0 14px rgba(255,139,209,.25);
+}
+
+.btn,button{
+  background:linear-gradient(180deg,#fff1a8,var(--pixie-gold)) !important;
+  color:#341444 !important;
+  border:2px solid rgba(255,255,255,.65) !important;
+  border-radius:18px !important;
+  box-shadow:0 6px 0 rgba(107,57,130,.72),0 0 18px rgba(255,224,138,.20) !important;
+}
+.btn.secondary,button.secondary{
+  background:linear-gradient(180deg,rgba(255,255,255,.18),rgba(185,140,255,.24)) !important;
+  color:var(--pixie-cream) !important;
+  box-shadow:0 5px 0 rgba(41,19,75,.72) !important;
+}
+.btn.pink,button.pink{
+  background:linear-gradient(180deg,#ffb8e3,var(--pixie-pink)) !important;
+  color:#38112e !important;
+}
+.btn.green,button.green{
+  background:linear-gradient(180deg,#c4ffd8,var(--pixie-mint)) !important;
+  color:#15351e !important;
+}
+.btn:active,button:active{transform:translateY(4px) !important;box-shadow:0 2px 0 rgba(107,57,130,.72) !important;}
+
+.fill,
+.boss-progress .fill{
+  background:linear-gradient(90deg,var(--pixie-mint),var(--pixie-blue),var(--pixie-pink),var(--pixie-gold)) !important;
+  box-shadow:0 0 16px rgba(143,234,255,.35);
+}
+.meter{border:1px solid rgba(255,247,223,.35) !important;background:rgba(10,6,22,.45) !important;}
+
+.scroll.skyrim-note{
+  background:
+    radial-gradient(circle at 20% 0%, rgba(255,255,255,.42), transparent 28%),
+    linear-gradient(180deg,#fff0c7,#eecf91) !important;
+  border-color:#c59345 !important;
+}
+.scroll.skyrim-note:before{content:"✦ ᚠ ᚢ ᚦ  ✦" !important;}
+
+.photo-summon,
+.lyrics-video,
+.bonus-singer-stage,
+.door-scene,
+.dark-room{
+  border-color:rgba(255,247,223,.45) !important;
+  box-shadow:0 0 0 3px rgba(185,140,255,.22),0 0 24px rgba(143,234,255,.18),0 18px 42px rgba(0,0,0,.30) !important;
+}
+
+.door-scene{
+  background:radial-gradient(circle at 50% 42%, rgba(255,224,138,.20), rgba(255,139,209,.14) 35%, rgba(16,8,34,.96) 68%) !important;
+}
+.dark-room{
+  background:radial-gradient(circle at 50% 45%, rgba(143,234,255,.20), rgba(185,140,255,.18) 42%, rgba(5,4,14,.96) 72%) !important;
+}
+.door-glow,.stone-rays,.stone-ring{filter:drop-shadow(0 0 10px rgba(255,139,209,.35)) !important;}
+.magic-stone{filter:drop-shadow(0 0 22px rgba(157,242,192,.60)) drop-shadow(0 0 48px rgba(143,234,255,.38)) drop-shadow(0 12px 16px rgba(0,0,0,.34)) !important;}
+
+.memory h3:before{content:"✧ ";color:var(--pixie-gold)}
+.hero-icon{filter:drop-shadow(0 0 18px rgba(255,139,209,.32)) drop-shadow(0 18px 20px rgba(0,0,0,.3)) !important;}
+.surprise{background:linear-gradient(180deg,rgba(255,224,138,.18),rgba(255,139,209,.10)) !important;border-color:rgba(255,224,138,.35) !important;}
+
+@media (prefers-reduced-motion:reduce){body:before,.card:before{animation:none!important}}
